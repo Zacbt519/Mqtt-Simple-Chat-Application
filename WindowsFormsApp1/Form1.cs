@@ -22,7 +22,7 @@ namespace WindowsFormsApp1
 
         }
 
-        MqttClient myClient = new MqttClient("134.41.140.214", 1883, false, null, null, MqttSslProtocols.TLSv1_2);
+        MqttClient myClient = new MqttClient("IPAddressHere", 1883, false, null, null, MqttSslProtocols.TLSv1_2);
         string message;
         string username;
         string password;
@@ -35,7 +35,7 @@ namespace WindowsFormsApp1
             string clientId = Guid.NewGuid().ToString();
             myClient.Connect(clientId, "dev", "dev1234");
 
-            myClient.Subscribe(new string[] { "/wack/#" }, new byte[] { MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE });
+            myClient.Subscribe(new string[] {"Topic" }, new byte[] { MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE });
 
         }
 
